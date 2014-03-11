@@ -138,3 +138,8 @@ TOPICS_SUBJECT_URL = '/topicsSubject.html'
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = ['*']
+
+TRANSFER_WEB_API_URL = 'https://cts.loc.gov'
+TRANSFER_CHRONAM_PROJECT = '/transfer/inventory/project/1/bags'
+TRANSFER_WEB_API_USER = 'chronamapi'
+TRANSFER_WEB_API_PASSWORD = 'password'

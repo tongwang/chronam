@@ -12,8 +12,8 @@ function log() {
 }
 
 #so that the install doesn't prompt us for a password
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password'
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password'
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password '
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password '
 
 fullScriptPath=`realpath $0`
 installDir=`dirname $fullScriptPath`
@@ -23,8 +23,6 @@ solrDownload="http://archive.apache.org/dist/lucene/solr/${solrVersion}/${solrTa
 solrHome=/usr/share/jetty8
 solrCollectionConfigDir=${solrHome}/solr/collection1/conf
 solrCollectionConfigFiles=("${installDir}/../conf/schema.xml" "${installDir}/../conf/solrconfig.xml")
-
-#echo "installDir is $installDir"
 
 aptGetDependencies=("python-dev" "python-virtualenv" "mysql-server" "libmysqlclient-dev" "apache2" "libapache2-mod-wsgi" "jetty8" "libxml2-dev" "libxslt-dev" "libjpeg-dev" "graphicsmagick")
 

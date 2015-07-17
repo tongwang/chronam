@@ -4,9 +4,11 @@ function realpath {
   perl -MCwd -e 'print Cwd::realpath ($ARGV[0]), qq<\n>' $0
 }
 
-function log {
-  echo $0 >> /dev/stdout
-  echo $0 >> install.log
+LOG_FILE=install.log
+
+function log() {
+  echo $1 >> /dev/stdout
+  echo $1 >> ${LOG_FILE}
 }
 
 fullScriptPath=`realpath $0`
@@ -36,11 +38,16 @@ log "install solr ${solrVersion}"
 if [ ! -f ${solrTarFile} ]
 then
   wget ${solrDownload}
-  tar zxvf solr-${solrVersion}.tgz
+  log "untar ${solrTarFile}"
+  tar zxf ${solrTarFile}
 fi
 
 #only copy files that aren't already in jetty
-sudo rsync -r --ignore-existing solr-${solrVersion}/example ${solrHome}
+log "Running sudo rsync -r --ignore-existing solr-${solrVersion}/example ${solrHome}"
+sudo rsync --recursive --ignore-existing solr-${solrVersion}/example/ ${solrHome}
+
+#ensure the destination exists
+sudo mkdir -p ${solrCollectionConfigDir}
 
 for config in ${solrCollectionConfigFiles[@]}
 do
@@ -50,7 +57,7 @@ done
 
 log "enable jetty to startup"
 #use regex to replace NO_START=0 to NO_START=1 while creating a backup with the extension .bck
-sed -i ".bck" -E "s/NO_START\\=0/NO_START\\=1" /etc/default/jetty8
+sudo sed --in-place=bck -E "s/NO_START\\=1/NO_START\\=0/" /etc/default/jetty8
 
 log "change ${solrHome} to be owned by jetty user"
 sudo chown -R jetty ${solrHome}

@@ -5,7 +5,7 @@ solrTarFile="solr-${solrVersion}.tgz"
 solrDownload="http://archive.apache.org/dist/lucene/solr/${solrVersion}/${solrTarFile}"
 solrHome=/usr/share/jetty8
 solrCollectionConfigDir=${solrHome}/solr/collection1/conf
-solrCollectionConfigFiles=("${installDir}/../conf/schema.xml" "${installDir}/../conf/solrconfig.xml")
+solrCollectionConfigFiles=("${chronamDir}/conf/schema.xml" "${chronamDir}/conf/solrconfig.xml")
 
 log "install solr ${solrVersion}"
 if [ ! -f ${solrTarFile} ]

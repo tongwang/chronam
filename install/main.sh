@@ -11,6 +11,10 @@ function log() {
   echo $1 >> ${LOG_FILE}
 }
 
+#so that the install doesn't prompt us for a password
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password'
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password'
+
 fullScriptPath=`realpath $0`
 installDir=`dirname $fullScriptPath`
 solrVersion="4.10.4"

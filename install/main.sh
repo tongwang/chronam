@@ -18,4 +18,7 @@ chronamDir=`dirname $installDir`
 #we 'run' the other scripts by sourcing them. That way we can easily share variables without having to export them
 source ${installDir}/dependencies.sh
 source ${installDir}/solr.sh
-source ${installDir}/apache.sh
+#source ${installDir}/apache.sh
+source ${installDir}/virtualenv.sh
+source ${installDir}/mysql.sh
+source ${installDir}/django.sh

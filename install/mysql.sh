@@ -5,7 +5,7 @@ chronamPassword=chronam
 sudo service mysqld start
 
 log "create chronam user and database"
-echo "DROP DATABASE IF EXISTS chronam; CREATE DATABASE chronam CHARACTER SET utf8; GRANT ALL ON chronam.* to 'chronam'@'localhost' identified by '${chronamPassword}'; GRANT ALL ON test_chronam.* TO 'chronam'@'localhost' identified by '${chronamPassword}';" | mysql -u root -p
+echo "DROP DATABASE IF EXISTS chronam; CREATE DATABASE chronam CHARACTER SET utf8; GRANT ALL ON chronam.* to 'chronam'@'localhost' identified by '${chronamPassword}'; GRANT ALL ON test_chronam.* TO 'chronam'@'localhost' identified by '${chronamPassword}';" | mysql -u root -p 
 
 cp ${chronamDir}/settings_template.py ${chronamDir}/settings.py
 

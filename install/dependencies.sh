@@ -10,8 +10,8 @@ then
   sudo apt-get update
   
   #so that the install doesn't prompt us for a password
-  sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password '
-  sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password '
+  sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password ""'
+  sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password ""'
 
   log "Install ${aptGetDependencies[@]}"
   sudo apt-get install ${aptGetDependencies[@]} -y

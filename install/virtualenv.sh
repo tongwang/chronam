@@ -9,7 +9,7 @@ export PYTHONPATH=/opt
 
 log "install python modules for chronam"
 pip install -U distribute
-pip install -r requirements.pip
+pip install  --allow-external PIL --allow-unverified PIL -r requirements.pip
 
 log "create chronam data directories"
 mkdir -p ${chronamDir}/data/batches

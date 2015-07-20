@@ -1,4 +1,4 @@
-#1/usr/bin/env bash
+#!/usr/bin/env bash
 
 solrVersion="4.10.4"
 solrTarFile="solr-${solrVersion}.tgz"

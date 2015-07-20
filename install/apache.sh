@@ -1,4 +1,4 @@
-#1/usr/bin/env bash
+#!/usr/bin/env bash
 
 sudo a2enmod cache expires rewrite disk_cache
 sudo cp ${chronamDir}/conf/chronam.conf /etc/apache2/sites-available/chronam.conf

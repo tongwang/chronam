@@ -1,6 +1,6 @@
-#1/usr/bin/env bash
+#!/usr/bin/env bash
 
-aptGetDependencies=("python-dev" "python-virtualenv" "mysql-server" "libmysqlclient-dev" "apache2" "libapache2-mod-wsgi" "jetty8" "libxml2-dev" "libxslt-dev" "libjpeg-dev" "graphicsmagick")
+aptGetDependencies=("python-dev" "python-virtualenv" "apache2" "libapache2-mod-wsgi" "jetty8" "libxml2-dev" "libxslt-dev" "libjpeg-dev" "graphicsmagick")
 aptGetMysqlDependencies=("mysql-server" "libmysqlclient-dev")
 
 log "install dependencies"

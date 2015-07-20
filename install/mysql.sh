@@ -1,4 +1,4 @@
-#1/usr/bin/env bash
+#!/usr/bin/env bash
 
 chronamPassword=chronam
 

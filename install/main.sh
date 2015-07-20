@@ -1,4 +1,4 @@
-#1/usr/bin/env bash
+#!/usr/bin/env bash
 
 function realpath {
   perl -MCwd -e 'print Cwd::realpath ($ARGV[0]), qq<\n>' $0

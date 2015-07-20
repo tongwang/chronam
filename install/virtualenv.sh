@@ -9,7 +9,8 @@ log "create vritual environment for chronam"
 fi
 
 source ${chronamDir}/ENV/bin/activate >> $LOG_FILE
-export PYTHONPATH=/opt
+#export PYTHONPATH=/opt
+export PYTHONPATH=`dirname ${chronamDir}
 
 log "install python modules for chronam"
 pip install -U distribute >> $LOG_FILE

@@ -22,3 +22,4 @@ source ${installDir}/solr.sh
 source ${installDir}/virtualenv.sh
 source ${installDir}/mysql.sh
 source ${installDir}/django.sh
+source ${installDir}/loadData.sh

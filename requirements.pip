@@ -8,7 +8,6 @@ PIL
 simplejson
 feedparser
 rfc3339==5
-south
 mimeparse
 NativeImaging
 html5lib==0.95

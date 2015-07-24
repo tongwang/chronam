@@ -1,0 +1,3 @@
+source ~/work/chronam/ENV/bin/activate
+export PYTHONPATH=~/work
+export DJANGO_SETTINGS_MODULE=chronam.settings

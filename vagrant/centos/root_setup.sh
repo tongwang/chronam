@@ -27,7 +27,9 @@ cp $CHRONAM_HOME/conf/jetty-redhat /etc/default/jetty
 # replace "-Xms2g -Xmx2g" with "-Xms256m -Xmx256m" because 2g is too large for dev VM
 sed -i -- 's/-Xms2g -Xmx2g/-Xms256m -Xmx256m/g' /etc/default/jetty
 
+chkconfig --levels 235 jetty on
 service jetty start
 
 # start MySQL
+chkconfig --levels 235 mysqld on
 service mysqld start
